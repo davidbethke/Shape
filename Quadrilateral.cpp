@@ -62,3 +62,94 @@ void Quadrilateral::initPoints()
 	p3=Point(x3,y3);
 	p4=Point(x4,y4);
 }
+double Quadrilateral::getX(int i) const
+{
+	switch (i)
+	{
+	case 1:
+		return x1;
+		break;
+	case 2:
+		return x2;
+		break;
+	case 3:
+		return x3;
+		break;
+	case 4:
+		return x4;
+		break;
+	default:
+		return x1;
+
+	}
+}
+double Quadrilateral::getY(int i) const
+{
+	switch (i)
+	{
+	case 1:
+		return y1;
+		break;
+	case 2:
+		return y2;
+		break;
+	case 3:
+		return y3;
+		break;
+	case 4:
+		return y4;
+		break;
+	default:
+		return y1;
+
+	}
+}
+
+Point Quadrilateral::getPoint(int i) const
+{
+	switch (i)
+	{
+	case 1:
+		return p1;
+		break;
+	case 2:
+		return p2;
+		break;
+	case 3:
+		return p3;
+		break;
+	case 4:
+		return p4;
+		break;
+	default:
+		return p1;
+
+	}
+}
+Line Quadrilateral::getLine(int i) const
+{
+	switch (i)
+	{
+	case 1:
+		return l1;
+		break;
+	case 2:
+		return l2;
+		break;
+	case 3:
+		return l3;
+		break;
+	case 4:
+		return l4;
+		break;
+	default:
+		return l1;
+
+	}
+}
+void Quadrilateral::draw()
+{
+}
+void Quadrilateral::displayDimensions()
+{
+}

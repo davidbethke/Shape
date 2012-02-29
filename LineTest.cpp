@@ -45,10 +45,23 @@ TEST_F(LineTest,createParallelLine)
 }
 TEST_F(LineTest,createParallelLine2)
 {
-	Line pLine=lenLine.createParallelLine(5,2); // twice as long
+	Line pLine=lenLine.createParallelLine(5,0,2); //offset 5, 0 shift, twice as long
 	EXPECT_EQ(10,pLine.getLength())<<"pLine len FAIL";
 	EXPECT_EQ(0,pLine.getBegin().getX())<<"pLine x FAIL";
 	EXPECT_EQ(-5,pLine.getBegin().getY())<<"pLine y FAIL";
 	EXPECT_EQ(10,pLine.getEnd().getX())<<"pLine x end FAIL";
+	EXPECT_EQ(-5,pLine.getEnd().getY())<<"pLine y end FAIL";
+}
+TEST_F(LineTest,createParallelLineShift)
+{
+	Line pLine=lenLine.createParallelLine(5,2); // offset by 5,shift by 2 to the left
+	//verify lenLine
+	EXPECT_EQ(5,lenLine.getLength())<<"lenLine len FAIL";
+	EXPECT_EQ(5,lenLine.getEnd().getX())<<"lenline x FAIL";
+	EXPECT_EQ(0,lenLine.getEnd().getY())<<"lenLine y FAIL";
+	EXPECT_EQ(5,pLine.getLength())<<"pLine len FAIL";
+	EXPECT_EQ(-2,pLine.getBegin().getX())<<"pLine x FAIL";
+	EXPECT_EQ(-5,pLine.getBegin().getY())<<"pLine y FAIL";
+	EXPECT_EQ(3,pLine.getEnd().getX())<<"pLine x end FAIL";
 	EXPECT_EQ(-5,pLine.getEnd().getY())<<"pLine y end FAIL";
 }

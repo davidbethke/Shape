@@ -9,8 +9,12 @@ public:
 	Quadrilateral(Point,Point,Point,Point);
 	Quadrilateral(Line,Line,Line,Line);
 	~Quadrilateral(void);
-	void draw();
+	virtual void draw();
 	virtual void displayDimensions();
+	double getX(int) const;
+	double getY(int) const;
+	Point getPoint(int) const;
+	Line getLine(int) const;
 private:
 	double x1,y1,x2,y2,x3,y3,x4,y4;
 	Point p1, p2, p3, p4;
