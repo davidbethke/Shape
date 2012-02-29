@@ -27,15 +27,24 @@ double Line::getLength() const
 {
 	return(begin.distance(end));
 }
-Line  Line::createParallelLine(double offset, double ratio) const
+Line  Line::createParallelLine(double offset, double scale) const
 {
-	// for readability
-	double yMult=(end.getY()-begin.getY())/(ratio*length);
-	double xMult=(begin.getX()-end.getX())/(ratio*length);
+	// for readability http://stackoverflow.com/questions/2825412/draw-a-parallel-line
+	double yMult=(end.getY()-begin.getY())/(length);
+	double xMult=(begin.getX()-end.getX())/(length);
+	// calc new x, y vals
 	double newX1=begin.getX()+ offset*yMult;
-	double newX2=begin.getX()+ offset*yMult;
-	double newY1=begin.getX()+ offset*xMult;
-	double newY2=begin.getX()+ offset*xMult;
+	double newX2=end.getX()+ offset*yMult;
+	double newY1=begin.getY()+ offset*xMult;
+	double newY2=end.getY()+ offset*xMult;
+	// scale, add to the begin x1,y1
+	double deltaY=(newY2-newY1)*scale;
+	double deltaX=(newX2-newX1)*scale;
+	//new end point
+	newX2=newX1+deltaX;
+	newY2=newY1+deltaY;
+
+	
 
 	return(Line(Point(newX1,newY1),Point(newX2,newY2)));
 }

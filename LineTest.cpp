@@ -38,4 +38,17 @@ TEST_F(LineTest,createParallelLine)
 {
 	Line pLine=lenLine.createParallelLine(5);
 	EXPECT_EQ(5,pLine.getLength())<<"pLine len FAIL";
+	EXPECT_EQ(0,pLine.getBegin().getX())<<"pLine x FAIL";
+	EXPECT_EQ(-5,pLine.getBegin().getY())<<"pLine y FAIL";
+	EXPECT_EQ(5,pLine.getEnd().getX())<<"pLine x end FAIL";
+	EXPECT_EQ(-5,pLine.getEnd().getY())<<"pLine y end FAIL";
+}
+TEST_F(LineTest,createParallelLine2)
+{
+	Line pLine=lenLine.createParallelLine(5,2); // twice as long
+	EXPECT_EQ(10,pLine.getLength())<<"pLine len FAIL";
+	EXPECT_EQ(0,pLine.getBegin().getX())<<"pLine x FAIL";
+	EXPECT_EQ(-5,pLine.getBegin().getY())<<"pLine y FAIL";
+	EXPECT_EQ(10,pLine.getEnd().getX())<<"pLine x end FAIL";
+	EXPECT_EQ(-5,pLine.getEnd().getY())<<"pLine y end FAIL";
 }
