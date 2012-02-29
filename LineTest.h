@@ -12,7 +12,7 @@ protected:
 	virtual void TearDown()
 	{
 	}
-	Line lenLine, ptLine;
+	Line lenLine, ptLine,threeFour;
 	const Line lenLineConst;
 public:
 	LineTest(void);

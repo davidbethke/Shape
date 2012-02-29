@@ -2,7 +2,7 @@
 #include "LineTest.h"
 
 
-LineTest::LineTest(void):lenLine(5),ptLine(Point(),Point(5)),lenLineConst(10)
+LineTest::LineTest(void):lenLine(5),ptLine(Point(),Point(5)),threeFour(Point(),Point(3,4)),lenLineConst(10)
 {
 }
 
@@ -64,4 +64,37 @@ TEST_F(LineTest,createParallelLineShift)
 	EXPECT_EQ(-5,pLine.getBegin().getY())<<"pLine y FAIL";
 	EXPECT_EQ(3,pLine.getEnd().getX())<<"pLine x end FAIL";
 	EXPECT_EQ(-5,pLine.getEnd().getY())<<"pLine y end FAIL";
+}
+TEST_F(LineTest,createParallelLineShift2)
+{
+	Line pLine=threeFour.createParallelLine(5,0,2); // offset by 5,shift by 0 to the left, len*2
+	//verify threeFour
+	EXPECT_EQ(5,threeFour.getLength())<<"lenLine len FAIL";
+	EXPECT_EQ(3,threeFour.getEnd().getX())<<"lenline x FAIL";
+	EXPECT_EQ(4,threeFour.getEnd().getY())<<"lenLine y FAIL";
+	EXPECT_EQ(10,pLine.getLength())<<"pLine len FAIL";
+	EXPECT_EQ(4,pLine.getBegin().getX())<<"pLine x FAIL";
+	EXPECT_EQ(-3,pLine.getBegin().getY())<<"pLine y FAIL";
+	EXPECT_EQ(10,pLine.getEnd().getX())<<"pLine x end FAIL";
+	EXPECT_EQ(5,pLine.getEnd().getY())<<"pLine y end FAIL";
+	//check distance of beg and end
+	EXPECT_EQ(5,threeFour.getBegin().distance(pLine.getBegin()))<<"beg dist FAIL";
+	//EXPECT_EQ(5,threeFour.getEnd().distance(pLine.getEnd()))<<"end dist FAIL"; //expect fail longer
+}
+
+TEST_F(LineTest,createParallelLine3)
+{
+	Line pLine=threeFour.createParallelLine(5); // offset by 5,shift by 0 to the left, len
+	//verify threeFour
+	EXPECT_EQ(5,threeFour.getLength())<<"lenLine len FAIL";
+	EXPECT_EQ(3,threeFour.getEnd().getX())<<"lenline x FAIL";
+	EXPECT_EQ(4,threeFour.getEnd().getY())<<"lenLine y FAIL";
+	EXPECT_EQ(5,pLine.getLength())<<"pLine len FAIL";
+	EXPECT_EQ(4,pLine.getBegin().getX())<<"pLine x FAIL";
+	EXPECT_EQ(-3,pLine.getBegin().getY())<<"pLine y FAIL";
+	EXPECT_EQ(7,pLine.getEnd().getX())<<"pLine x end FAIL";
+	EXPECT_EQ(1,pLine.getEnd().getY())<<"pLine y end FAIL";
+	//check distance of beg and end
+	EXPECT_EQ(5,threeFour.getBegin().distance(pLine.getBegin()))<<"beg dist FAIL";
+	EXPECT_EQ(5,threeFour.getEnd().distance(pLine.getEnd()))<<"end dist FAIL";
 }
