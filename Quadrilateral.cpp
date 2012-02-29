@@ -158,12 +158,11 @@ void Quadrilateral::draw()
 }
 void Quadrilateral::displayDimensions()
 {
-	cout << "Here are the dimensions"<<endl;
-	cout <<"Side1 length:"<<l1.getLength()<< " ";
-	cout <<"Side2 length:"<<l2.getLength()<< " ";
-	cout <<"Side3 length:"<<l3.getLength()<< " ";
-	cout <<"Side4 length:"<<l4.getLength()<< " ";
+	cout <<"Side1 length:"<<l1.getLength()<< endl;
+	cout <<"Side2 length:"<<l2.getLength()<< endl;
+	cout <<"Side3 length:"<<l3.getLength()<< endl;
+	cout <<"Side4 length:"<<l4.getLength()<< endl;
 
 	cout <<"Verteces"<<endl;
-	cout << p1<< " " << p2 << " " << p3 << " " << p4<< endl;
+	cout << p1<< endl << p2 << endl << p3 << endl << p4<< endl;
 }

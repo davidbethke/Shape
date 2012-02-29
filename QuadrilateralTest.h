@@ -7,11 +7,18 @@ class QuadrilateralTest :
 protected:
 	virtual void SetUp()
 	{
+		p_cout_streambuf = std::cout.rdbuf();
 	}
+	
 	virtual void TearDown()
 	{
+		std::cout.rdbuf(p_cout_streambuf); // restore
 	}
-	//Quadrilateral quad1, quad2;
+	Point p1,p2, p3,p4;
+	Quadrilateral quad1;
+	std::ostringstream oss;
+	std::streambuf* p_cout_streambuf;
+	std::string dimString;
 	//const Quadrilateral quadConst;
 public:
 	QuadrilateralTest(void);

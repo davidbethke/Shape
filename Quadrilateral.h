@@ -15,7 +15,7 @@ public:
 	double getY(int) const;
 	Point getPoint(int) const;
 	Line getLine(int) const;
-private:
+protected:
 	double x1,y1,x2,y2,x3,y3,x4,y4;
 	Point p1, p2, p3, p4;
 	Line l1, l2, l3, l4;

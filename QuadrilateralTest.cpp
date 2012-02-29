@@ -2,8 +2,13 @@
 #include "QuadrilateralTest.h"
 
 
-QuadrilateralTest::QuadrilateralTest(void)
+QuadrilateralTest::QuadrilateralTest(void):p1(0,0),
+											p2(0,1),
+											p3(1,1),
+											p4(1,0),
+											quad1(p1,p2,p3,p4)
 {
+	dimString="Side1 length:1\nSide2 length:1\nSide3 length:1\nSide4 length:1\nVerteces\nx:0, y:0\nx:0, y:1\nx:1, y:1\nx:1, y:0\n";
 }
 
 
@@ -109,4 +114,10 @@ TEST_F(QuadrilateralTest,constructor3)
 	EXPECT_TRUE(p4 == quad.getLine(4).getBegin())<<"line FAIL";
 	EXPECT_TRUE(p1 == quad.getLine(4).getEnd())<<"line FAIL";
 
+}
+TEST_F(QuadrilateralTest,display)
+{
+	std::cout.rdbuf(oss.rdbuf());
+	quad1.displayDimensions();
+	EXPECT_EQ(dimString,oss.str())<<"display string FAIL";
 }
