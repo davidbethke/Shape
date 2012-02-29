@@ -45,6 +45,9 @@
     <ClInclude Include="LineTest.h">
       <Filter>Test</Filter>
     </ClInclude>
+    <ClInclude Include="QuadrilateralTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -69,6 +72,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LineTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadrilateralTest.cpp">
       <Filter>Test</Filter>
     </ClCompile>
   </ItemGroup>

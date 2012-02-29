@@ -4,6 +4,7 @@
 class Point
 {
 	friend std::ostream& operator<<(std::ostream&,const Point&);
+	friend bool operator==(const Point&,const Point&);
 public:
 	Point(double=0,double=0);
 	~Point(void);

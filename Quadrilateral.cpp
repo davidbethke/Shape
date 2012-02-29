@@ -1,7 +1,9 @@
 #include "StdAfx.h"
 #include "Quadrilateral.h"
+#include <iostream>
 
 
+using namespace std;
 Quadrilateral::Quadrilateral(double x1, double y1,
 							double x2, double y2,
 							double x3, double y3,
@@ -27,7 +29,11 @@ Quadrilateral::Quadrilateral(Point p1,Point p2, Point p3, Point p4):
 Quadrilateral::Quadrilateral(Line l1, Line l2, Line l3, Line l4):
 							l1(l1), l2(l2), l3(l3),l4(l4)
 {
-	initPoints();
+	//initPoints();
+	p1=l1.getBegin();
+	p2=l2.getBegin();
+	p3=l3.getBegin();
+	p4=l4.getBegin();
 	initDouble();
 }
 
@@ -152,4 +158,12 @@ void Quadrilateral::draw()
 }
 void Quadrilateral::displayDimensions()
 {
+	cout << "Here are the dimensions"<<endl;
+	cout <<"Side1 length:"<<l1.getLength()<< " ";
+	cout <<"Side2 length:"<<l2.getLength()<< " ";
+	cout <<"Side3 length:"<<l3.getLength()<< " ";
+	cout <<"Side4 length:"<<l4.getLength()<< " ";
+
+	cout <<"Verteces"<<endl;
+	cout << p1<< " " << p2 << " " << p3 << " " << p4<< endl;
 }
