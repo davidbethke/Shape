@@ -4,7 +4,7 @@
 class Line
 {
 public:
-	Line(double);
+	Line(double=1.0);
 	Line(Point,Point);
 	~Line(void);
 	Point getBegin() const;
