@@ -122,3 +122,22 @@ TEST_F(LineTest,createParallelLinePrint)
 	EXPECT_EQ(5,threeFour.getBegin().distance(pLine.getBegin()))<<"beg dist FAIL";
 	EXPECT_EQ(5,threeFour.getEnd().distance(pLine.getEnd()))<<"end dist FAIL";
 }
+TEST_F(LineTest,lineConstructor2)
+{
+	Line l1(10,90);
+	Line l2(10,0);
+	EXPECT_EQ(10,l1.getLength())<<"l1 length FAIL";
+	EXPECT_EQ(10,l2.getLength())<<"l2 length FAIL";
+	
+	EXPECT_EQ(0,l1.getBegin().getX())<<"l1 x begin FAIL";
+	EXPECT_EQ(0,l1.getBegin().getX())<<"l1 y begin FAIL";
+	EXPECT_NEAR(0,l1.getEnd().getX(),.0001)<<"l1 x end FAIL"; //double math no fun
+	EXPECT_EQ(10,l1.getEnd().getY())<<"l1 y end FAIL";
+
+	
+	EXPECT_EQ(0,l2.getBegin().getX())<<"l2 x begin FAIL";
+	EXPECT_EQ(0,l2.getBegin().getX())<<"l2 y begin FAIL";
+	EXPECT_EQ(10,l2.getEnd().getX())<<"l2 x end FAIL";
+	EXPECT_NEAR(0,l2.getEnd().getY(),.0001)<<"l2 y end FAIL"; // double math uncertainty
+
+}

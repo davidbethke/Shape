@@ -119,5 +119,5 @@ TEST_F(QuadrilateralTest,display)
 {
 	std::cout.rdbuf(oss.rdbuf());
 	quad1.displayDimensions();
-	EXPECT_EQ(dimString,oss.str())<<"display string FAIL";
+	EXPECT_TRUE(dimString==oss.str())<<"display string FAIL";
 }

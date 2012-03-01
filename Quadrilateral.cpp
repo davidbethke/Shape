@@ -2,7 +2,7 @@
 #include "Quadrilateral.h"
 #include <iostream>
 
-
+using namespace cimg_library;
 using namespace std;
 Quadrilateral::Quadrilateral(double x1, double y1,
 							double x2, double y2,
@@ -10,6 +10,7 @@ Quadrilateral::Quadrilateral(double x1, double y1,
 							double x4, double y4):
 x1(x1),y1(y1),x2(x2),y2(y2),x3(x3),y3(y3),x4(x4),y4(y4) //TODO this->x1=x1 correct?
 {
+	initColor();
 	//init Points for convenience
 	initPoints();
 	initLines();
@@ -20,7 +21,8 @@ x1(x1),y1(y1),x2(x2),y2(y2),x3(x3),y3(y3),x4(x4),y4(y4) //TODO this->x1=x1 corre
 Quadrilateral::Quadrilateral(Point p1,Point p2, Point p3, Point p4):
 							p1(p1),p2(p2),p3(p3),p4(p4)
 {
-	// init double vals;
+	// init double vals
+	initColor();;
 	initDouble();
 	initLines();
 
@@ -30,6 +32,7 @@ Quadrilateral::Quadrilateral(Line l1, Line l2, Line l3, Line l4):
 							l1(l1), l2(l2), l3(l3),l4(l4)
 {
 	//initPoints();
+	initColor();
 	p1=l1.getBegin();
 	p2=l2.getBegin();
 	p3=l3.getBegin();
@@ -155,6 +158,28 @@ Line Quadrilateral::getLine(int i) const
 }
 void Quadrilateral::draw()
 {
+	
+	const int blue[]={0,0,255};
+	CImg<int> myImg(500,400,1,3,0);
+	myImg.fill(0);
+	myImg.draw_line(x1,y1,x2,y2,blue);
+	myImg.draw_line(x2,y2,x3,y3,blue);
+	myImg.draw_line(x3,y3,x4,y4,blue);
+	myImg.draw_line(x4,y4,x1,y1,blue);
+	
+	
+	
+	myImg.display("Quadrilateral Image");
+	//CImgDisplay mainDisp(myImg,"MyImage");
+	//std::getchar();
+	//while(!mainDisp.is_closed())
+	//	mainDisp.wait();
+	/*
+	unsigned char blue[]={0,0,255};
+	myImg.fill(0);
+	myImg.draw_line(p1.getX(),p1.getY(),p2.getX(),p2.getY(),blue);
+	myImg.display("Quadrilateral Image");
+	*/
 }
 void Quadrilateral::displayDimensions()
 {
@@ -165,4 +190,9 @@ void Quadrilateral::displayDimensions()
 
 	cout <<"Verteces"<<endl;
 	cout << p1<< endl << p2 << endl << p3 << endl << p4<< endl;
+}
+void Quadrilateral::initColor()
+{
+	
+	
 }

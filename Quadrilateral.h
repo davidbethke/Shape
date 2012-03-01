@@ -2,6 +2,7 @@
 #define QUADRILATERAL_H
 #include "Point.h"
 #include "Line.h"
+#include "CImg.h"
 class Quadrilateral
 {
 public:
@@ -22,6 +23,9 @@ protected:
 	void initPoints();
 	void initLines();
 	void initDouble();
+	void initColor();
+	//unsigned char blue[3];
+	//cimg_library::CImg<unsigned char> myImg;
 };
 
 #endif //QUADRILATERAL_H

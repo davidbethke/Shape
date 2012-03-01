@@ -1,9 +1,19 @@
 #include "StdAfx.h"
 #include "Line.h"
+#include <cmath>
 
-
-Line::Line(double l):begin(0,0),end(l,0),length(l)
+using namespace std;
+/*
+Line::Line(double l):begin(0,0),end(l,0),length(l),angle(0) // simplest line
 {
+}
+*/
+Line::Line(double l, double a, Point start):begin(start),length(l),angle(a)
+{
+	// right triangle
+	double x2=length*cos((PI*angle)/180) + begin.getX(); // offset by starting point, convert to radians
+	double y2=length*sin((PI*angle)/180) + begin.getY();
+	end=Point(x2,y2);
 }
 Line::Line(Point b, Point e):begin(b),end(e)
 {
