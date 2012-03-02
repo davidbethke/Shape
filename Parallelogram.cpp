@@ -12,7 +12,7 @@
 //				len2
 //
 Parallelogram::Parallelogram(double len1, double len2,double a1):
-							Trapezoid(len1,len2,len1,len2,a1,a1+90)
+							Trapezoid(len1,len2,len1,len2,a1,(180-a1))
 							
 {
 	
