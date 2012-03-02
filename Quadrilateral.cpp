@@ -19,7 +19,7 @@ Quadrilateral::Quadrilateral(double x1, double y1,
 							int i, int j):
 x1(x1),y1(y1),x2(x2),y2(y2),x3(x3),y3(y3),x4(x4),y4(y4) //TODO this->x1=x1 correct?
 {
-	initColor();
+	
 	//init Points for convenience
 	initPoints();
 	initLines();
@@ -40,7 +40,7 @@ Quadrilateral::Quadrilateral(int i,double len1, double len2, double len3, double
 							double a1, double a2, double a3, double a4)
 {
 	// construct the lines based on the passed in values
-	l1=Line(len1,a1);				// starting point at origin (0,0)
+	l1=Line(len1,a1,Point(50,50));				// TODO, changed starting point at origin (0,0)
 	l2=Line(len2,a2,l1.getEnd());	// starting point at end of l1;
 	l3=Line(len3,a3,l2.getEnd());
 	l4=Line(len4,a4,l3.getEnd());
@@ -62,7 +62,7 @@ Quadrilateral::Quadrilateral(Point p1,Point p2, Point p3, Point p4):
 							p1(p1),p2(p2),p3(p3),p4(p4)
 {
 	// init double vals
-	initColor();;
+	
 	initDouble();
 	initLines();
 
@@ -78,8 +78,7 @@ Quadrilateral::Quadrilateral(Point p1,Point p2, Point p3, Point p4):
 Quadrilateral::Quadrilateral(Line l1, Line l2, Line l3, Line l4):
 							l1(l1), l2(l2), l3(l3),l4(l4)
 {
-	//initPoints();
-	//initColor();
+	
 	p1=l1.getBegin();
 	p2=l2.getBegin();
 	p3=l3.getBegin();
@@ -217,16 +216,7 @@ void Quadrilateral::draw()
 	
 	
 	myImg.display("Quadrilateral Image");
-	//CImgDisplay mainDisp(myImg,"MyImage");
-	//std::getchar();
-	//while(!mainDisp.is_closed())
-	//	mainDisp.wait();
-	/*
-	unsigned char blue[]={0,0,255};
-	myImg.fill(0);
-	myImg.draw_line(p1.getX(),p1.getY(),p2.getX(),p2.getY(),blue);
-	myImg.display("Quadrilateral Image");
-	*/
+	
 }
 void Quadrilateral::displayDimensions() const
 {
@@ -239,8 +229,4 @@ void Quadrilateral::displayDimensions() const
 	cout <<"Verteces"<<endl;
 	cout << p1<< endl << p2 << endl << p3 << endl << p4<< endl;
 }
-void Quadrilateral::initColor()
-{
-	
-	
-}
+
