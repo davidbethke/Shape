@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include "Quadrilateral.h"
+#include "Trapezoid.h"
 #include "Parallelogram.h"
 #include "CImg.h"
 #include <vector>
@@ -54,9 +55,12 @@ int main(int argc, char** argv)
 	//Point p1(0,0), p2(0,50),p3(50,50),p4(50,0);
 	//use default angles for now
 	//construct Quadrilateral
-	Quadrilateral quad2(1,len1,len2,len3,len4); // default angle
-	quad2.draw();
-	quad2.displayDimensions();
+	//Quadrilateral quad2(1,len1,len2,len3,len4); // default angle
+	//quad2.draw();
+	//quad2.displayDimensions();
+	Trapezoid trap(30,60,30,110,45,45);
+	trap.draw();
+	trap.displayDimensions();
 	getchar();
 
 #endif //NDEBUG

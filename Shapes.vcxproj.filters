@@ -54,6 +54,12 @@
     <ClInclude Include="Parallelogram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="trapezoid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TrapezoidTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -85,6 +91,12 @@
     </ClCompile>
     <ClCompile Include="Parallelogram.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trapezoid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TrapezoidTest.cpp">
+      <Filter>Test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
