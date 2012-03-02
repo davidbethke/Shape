@@ -4,10 +4,19 @@
 
 using namespace cimg_library;
 using namespace std;
+//Construct a Quadralateral w/ 4 point pairs
+//			
+//	(x2,y2)	_________ (x3,y3)
+//			|		|
+//			|		|  
+//			|_______|
+//		(x1,y1)     (x4,y4)	 
+//HACK int i, int j
 Quadrilateral::Quadrilateral(double x1, double y1,
 							double x2, double y2,
 							double x3, double y3,
-							double x4, double y4):
+							double x4, double y4,
+							int i, int j):
 x1(x1),y1(y1),x2(x2),y2(y2),x3(x3),y3(y3),x4(x4),y4(y4) //TODO this->x1=x1 correct?
 {
 	initColor();
@@ -18,6 +27,37 @@ x1(x1),y1(y1),x2(x2),y2(y2),x3(x3),y3(y3),x4(x4),y4(y4) //TODO this->x1=x1 corre
 	
 
 }
+
+// Construct a Quadrilateral w/ 4 lengths and 4 angles
+//  <<assumption>> angles specified close the quadrilateral
+//						line2(len2,a2,l1.getEnd())
+//							_________	
+//							|		|
+//	line1					|		|  Line3(len3,a3,l2.getEnd())
+//	(len1,a1,Point(0,0)		|_______|
+//							line4(len4,a4,l3.getEnd())
+Quadrilateral::Quadrilateral(int i,double len1, double len2, double len3, double len4,
+							double a1, double a2, double a3, double a4)
+{
+	// construct the lines based on the passed in values
+	l1=Line(len1,a1);				// starting point at origin (0,0)
+	l2=Line(len2,a2,l1.getEnd());	// starting point at end of l1;
+	l3=Line(len3,a3,l2.getEnd());
+	l4=Line(len4,a4,l3.getEnd());
+	// init the other member variables
+	p1=l1.getBegin();
+	p2=l2.getBegin();
+	p3=l3.getBegin();
+	p4=l4.getBegin();
+	initDouble();
+}
+//Construct a Quadrilateral w/ 4 Points
+//			
+//		 P2	_________ P3
+//			|		|
+//			|		|  
+//			|_______|
+//		  P1         P4	  
 Quadrilateral::Quadrilateral(Point p1,Point p2, Point p3, Point p4):
 							p1(p1),p2(p2),p3(p3),p4(p4)
 {
@@ -27,12 +67,19 @@ Quadrilateral::Quadrilateral(Point p1,Point p2, Point p3, Point p4):
 	initLines();
 
 }
-
+//Construct a Quadrilateral w/ 4 Lines
+//			
+//				l2
+//		 	_________ 
+//			|		|
+//		l1	|		|  l3 
+//			|_______|
+//		        l4	  
 Quadrilateral::Quadrilateral(Line l1, Line l2, Line l3, Line l4):
 							l1(l1), l2(l2), l3(l3),l4(l4)
 {
 	//initPoints();
-	initColor();
+	//initColor();
 	p1=l1.getBegin();
 	p2=l2.getBegin();
 	p3=l3.getBegin();
@@ -181,7 +228,7 @@ void Quadrilateral::draw()
 	myImg.display("Quadrilateral Image");
 	*/
 }
-void Quadrilateral::displayDimensions()
+void Quadrilateral::displayDimensions() const
 {
 	cout <<"Side1 length:"<<l1.getLength()<< endl;
 	cout <<"Side2 length:"<<l2.getLength()<< endl;

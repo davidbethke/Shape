@@ -13,6 +13,7 @@ public:
 	Point getEnd() const;
 	double getLength() const;
 	Line createParallelLine(double, double=0.0,double=1.0) const;
+	//void draw() const;
 private:
 	Point begin, end;
 	double length;

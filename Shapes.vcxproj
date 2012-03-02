@@ -84,6 +84,7 @@
     <ClInclude Include="LineTest.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Parallelogram.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="PointHelper.h" />
     <ClInclude Include="PointTest.h">
@@ -101,6 +102,7 @@
     <ClCompile Include="LineTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Parallelogram.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="PointHelper.cpp" />
     <ClCompile Include="PointTest.cpp">

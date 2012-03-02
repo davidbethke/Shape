@@ -126,12 +126,12 @@ TEST_F(LineTest,lineConstructor2)
 {
 	Line l1(10,90);
 	Line l2(10,0);
-	EXPECT_EQ(10,l1.getLength())<<"l1 length FAIL";
+	EXPECT_NEAR(10,l1.getLength(),.1)<<"l1 length FAIL";
 	EXPECT_EQ(10,l2.getLength())<<"l2 length FAIL";
 	
 	EXPECT_EQ(0,l1.getBegin().getX())<<"l1 x begin FAIL";
 	EXPECT_EQ(0,l1.getBegin().getX())<<"l1 y begin FAIL";
-	EXPECT_NEAR(0,l1.getEnd().getX(),.0001)<<"l1 x end FAIL"; //double math no fun
+	EXPECT_NEAR(0,l1.getEnd().getX(),.1)<<"l1 x end FAIL"; //double math no fun
 	EXPECT_EQ(10,l1.getEnd().getY())<<"l1 y end FAIL";
 
 	

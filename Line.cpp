@@ -13,6 +13,10 @@ Line::Line(double l, double a, Point start):begin(start),length(l),angle(a)
 	// right triangle
 	double x2=length*cos((PI*angle)/180) + begin.getX(); // offset by starting point, convert to radians
 	double y2=length*sin((PI*angle)/180) + begin.getY();
+	// round up, otherwis too many numbers after decimal
+	//TODO also see modf to split int with fraction
+	x2=ceil(x2*1000)/1000;
+	y2=ceil(y2*1000)/1000;
 	end=Point(x2,y2);
 }
 Line::Line(Point b, Point e):begin(b),end(e)
@@ -37,6 +41,15 @@ double Line::getLength() const
 {
 	return(begin.distance(end));
 }
+/*
+void Line::draw() const
+{
+	const int blue[]={0,0,255};
+	CImg<int> myImg(500,400,1,3,0);
+	myImg.fill(0);
+	myImg.draw_line(begin.getX(),begin.getY(),end.getX(),end.getY());
+}
+*/
 Line  Line::createParallelLine(double offset,double shift, double scale) const
 {
 	// for readability http://stackoverflow.com/questions/2825412/draw-a-parallel-line
