@@ -60,6 +60,12 @@
     <ClInclude Include="TrapezoidTest.h">
       <Filter>Test</Filter>
     </ClInclude>
+    <ClInclude Include="RectangleA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Square.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -97,6 +103,12 @@
     </ClCompile>
     <ClCompile Include="TrapezoidTest.cpp">
       <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="RectangleA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Square.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

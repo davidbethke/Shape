@@ -2,31 +2,23 @@
 #include "Parallelogram.h"
 
 
-//Parallelogram::Parallelogram(double length1, double length2, double angle):
-//											l1(length1,angle),
-//											l2(length2,0,l1.getEnd()),
-//											l4(length2,0,l1.getBegin()),
-//											l3(l4.getEnd(),l2.getEnd()),
-//											Quadrilateral(l1,l2,l3,l4)
-Parallelogram::Parallelogram(double length1, double length2,double angle):
-							l1(length1,angle),
-							l2(length2),
-							l3(length1),
-							l4(length2)
+//Parallelogram,  opposite sides parallel, equal angles
+//					len2						
+//			  _________________							
+//			 /			      /				
+//	len1	/				 / len1
+//		   /				/
+//        /__a1____________/ a1
+//				len2
+//
+Parallelogram::Parallelogram(double len1, double len2,double a1):
+							Trapezoid(len1,len2,len1,len2,a1,a1+90)
 							
 {
-	//Line l1(length1,angle);
-	//Line l2(length2,0,l1.getEnd());
-	//Line l3=l1.createParallelLine(length2);
-	//Line l4(l1.getBegin(),l3.getBegin());
-	Quadrilateral(l1,l2,l3,l4);
+	
 }
 
 
 Parallelogram::~Parallelogram(void)
 {
-}
-void Parallelogram::displayDimensions() const
-{
-	//TODO Parallelogram displayDimensions
 }

@@ -1,10 +1,11 @@
 #include "StdAfx.h"
 #include "trapezoid.h"
 
-
+/*
 Trapezoid::Trapezoid(void)
 {
 }
+*/
 // build a trapezoid,<<assumption>> AT LEAST 1 pair of parallel sides
 //									angles need to add up to 180degrees
 //				len2

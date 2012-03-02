@@ -6,6 +6,8 @@
 #include "Quadrilateral.h"
 #include "Trapezoid.h"
 #include "Parallelogram.h"
+#include "RectangleA.h"
+#include "Square.h"
 #include "CImg.h"
 #include <vector>
 using namespace cimg_library;
@@ -46,7 +48,7 @@ int main(int argc, char** argv)
 	//myImg.display("Lines");
 	//Quadrilateral *quad2=new Parallelogram(50,100,45);
 	//quad2->Quadrilateral::displayDimensions();
-	Parallelogram pGram(50,100,45);
+	//Parallelogram pGram(50,100,45);
 	//pGram.displayDimensions();
 	//quad2->draw();
 	//quad constructor len test
@@ -62,6 +64,19 @@ int main(int argc, char** argv)
 	trap.draw();
 	trap.displayDimensions();
 	getchar();
+	Parallelogram pGram(50,100,45);
+	pGram.draw();
+	pGram.displayDimensions();
+	getchar();
+	RectangleA rect(100,50);
+	rect.draw();
+	rect.displayDimensions();
+	getchar();
+	Square square(100);
+	square.draw();
+	square.displayDimensions();
+	getchar();
+
 
 #endif //NDEBUG
 }

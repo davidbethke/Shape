@@ -1,12 +1,12 @@
 #pragma once
-#include "quadrilateral.h"
+#include "Trapezoid.h"
 class Parallelogram :
-	public Quadrilateral
+	public Trapezoid
 {
 public:
-	Parallelogram(double=1, double=1,double=0);
+	Parallelogram(double, double, double);
 	~Parallelogram(void);
-	virtual void displayDimensions() const;
+	//virtual void displayDimensions() const;
 private:
 	double length1, length2, angle;
 	Line l1,l2,l3,l4;
