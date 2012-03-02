@@ -230,6 +230,7 @@ void Quadrilateral::draw()
 }
 void Quadrilateral::displayDimensions() const
 {
+	cout <<"Quadrilateral Dimensions"<<endl;
 	cout <<"Side1 length:"<<l1.getLength()<< endl;
 	cout <<"Side2 length:"<<l2.getLength()<< endl;
 	cout <<"Side3 length:"<<l3.getLength()<< endl;

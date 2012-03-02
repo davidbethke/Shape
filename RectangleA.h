@@ -6,6 +6,7 @@ class RectangleA :
 public:
 	RectangleA(double, double);
 	~RectangleA(void);
+	virtual void displayDimensions() const;
 private:
 	double height, width;
 };

@@ -6,6 +6,7 @@ class Square :
 public:
 	Square(double);
 	~Square(void);
+	virtual void displayDimensions() const;
 private:
 	double width;
 };
