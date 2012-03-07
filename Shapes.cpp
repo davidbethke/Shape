@@ -1,5 +1,11 @@
 // Shapes.cpp : Defines the entry point for the console application.
-//
+// Dave Bethke
+// Assignment 4, Problem 2.2
+// Two releases
+// #define _DEBUG or #define NDEBUG
+// included unit tests (googletest unit test framework), *Test files, based on previous comment
+// Ill omit these in the future, if you'd like
+// 
 
 #include "stdafx.h"
 #include <iostream>
