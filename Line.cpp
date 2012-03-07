@@ -38,7 +38,7 @@ double Line::getLength() const
 	return length;
 }
 // experiment, create parallel line, offset, scaled, orgin shift
-/*
+
 Line  Line::createParallelLine(double offset,double shift, double scale) const
 {
 	//  http://stackoverflow.com/questions/2825412/draw-a-parallel-line
@@ -76,4 +76,4 @@ Line  Line::createParallelLine(double offset,double shift, double scale) const
 	
 	return(Line(Point(newX1,newY1),Point(newX2,newY2)));
 }
-*/
+

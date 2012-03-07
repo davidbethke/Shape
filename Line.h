@@ -12,7 +12,7 @@ public:
 	Point getBegin() const;
 	Point getEnd() const;
 	double getLength() const;
-	//Line createParallelLine(double, double=0.0,double=1.0) const; //experiment
+	Line createParallelLine(double, double=0.0,double=1.0) const; //experiment
 	
 private:
 	Point begin, end;

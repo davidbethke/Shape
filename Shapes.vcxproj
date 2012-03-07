@@ -84,6 +84,9 @@
     <ClInclude Include="LineTest.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="MockQuadrilateral.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Parallelogram.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="PointHelper.h" />

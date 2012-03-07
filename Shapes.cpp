@@ -32,6 +32,7 @@ TEST(sample_test_case, sample_test)
 int main(int argc, char** argv) 
 { 
 #ifdef _DEBUG
+	::testing::InitGoogleMock(&argc, argv);
 	testing::InitGoogleTest(&argc, argv); 
 	RUN_ALL_TESTS(); 
 	std::getchar(); // keep console window open until Return keystroke

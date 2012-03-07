@@ -1,6 +1,8 @@
 #include "StdAfx.h"
 #include "QuadrilateralTest.h"
-
+#include "MockQuadrilateral.h"
+#include "gmock\gmock.h"
+#include "Square.h"
 
 QuadrilateralTest::QuadrilateralTest(void):p1(0,0),
 											p2(0,1),
@@ -162,4 +164,15 @@ TEST_F(QuadrilateralTest,constructorLen)
 	ASSERT_NEAR(p4.getY(),quad.getLine(3).getEnd().getY(),.1)<<"end p3 y FAIL";
 	ASSERT_NEAR(p1.getX(),quad.getLine(4).getEnd().getX(),.1)<<"end p4 x FAIL";
 	ASSERT_NEAR(p1.getY(),quad.getLine(4).getEnd().getY(),.1)<<"end p4 y FAIL";
+}
+// try Mock
+TEST_F(QuadrilateralTest,mockTest1)
+{
+	MockQuadrilateral mQuad;
+	EXPECT_CALL(mQuad,displayDimensions())              
+	  .Times(1);
+	Square square(25);
+	mQuad.displayDimensions();
+	mQuad.displayDimensions();
+
 }
