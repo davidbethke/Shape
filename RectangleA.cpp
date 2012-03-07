@@ -4,7 +4,7 @@
 
 
 using namespace std;
-RectangleA::RectangleA(double h, double w):Parallelogram(h,w,90)
+RectangleA::RectangleA(double h, double w):height(h),width(w),Parallelogram(h,w,90)
 {
 }
 

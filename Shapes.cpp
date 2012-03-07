@@ -5,7 +5,10 @@
 // #define _DEBUG or #define NDEBUG
 // included unit tests (googletest unit test framework), *Test files, based on previous comment
 // Ill omit these in the future, if you'd like
-// 
+//  Using cimg.h for graphics drawing
+// portable compiles on win, mac, linux
+// http://cimg.sourceforge.net/reference/group__cimg__overview.html
+//
 
 #include "stdafx.h"
 #include <iostream>
@@ -16,7 +19,7 @@
 #include "Square.h"
 #include "CImg.h"
 #include <vector>
-#include <algorithm>
+
 
 using namespace cimg_library;
 using namespace std;
@@ -37,19 +40,19 @@ int main(int argc, char** argv)
 	std::getchar(); // keep console window open until Return keystroke
 #endif //_DEBUG
 #ifdef NDEBUG
-	CImg<int> myImg(500,400,1,3,0);
-	myImg.fill(0);
+	//CImg<int> myImg(500,400,1,3,0);
+	//myImg.fill(0);
 	const int blue[]={0,0,255};
 	vector<Quadrilateral*> myShapes;
 	myShapes.push_back(new Trapezoid(30,60,30,110,45,45));
 	myShapes.push_back(new Parallelogram(90,110,45));
 	myShapes.push_back(new RectangleA(110,140));
 	myShapes.push_back(new Square(65));
-	vector<Quadrilateral*>::iterator it;
+	vector<Quadrilateral*>::iterator it; //try iterator instead of int i= ...
 	for(it=myShapes.begin(); it != myShapes.end();++it)
 	{
-		(*it)->draw();
 		(*it)->displayDimensions();
+		(*it)->draw();
 	}
 	
 

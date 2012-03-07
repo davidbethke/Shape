@@ -4,7 +4,7 @@
 
 using namespace cimg_library;
 using namespace std;
-//Construct a Quadralateral w/ 4 point pairs
+//Construct a Quadralateral w/ 8 doubles
 //			
 //	(x2,y2)	_________ (x3,y3)
 //			|		|
@@ -44,7 +44,7 @@ Quadrilateral::Quadrilateral(int i,double len1, double len2, double len3, double
 	l1=Line(len1,a1);		//defaults to starting at origin, expected val for unit tests
 #endif //_DEBUG
 #ifdef NDEBUG
-	l1=Line(len1,a1,Point(50,50));				// TODO, changed starting point at origin (0,0)
+	l1=Line(len1,a1,Point(50,50));				// DONE, changed starting point at (50,50)
 #endif //NDEBUG
 	l2=Line(len2,a2,l1.getEnd());	// starting point at end of l1;
 	l3=Line(len3,a3,l2.getEnd());
@@ -80,8 +80,8 @@ Quadrilateral::Quadrilateral(Point p1,Point p2, Point p3, Point p4):
 //		l1	|		|  l3 
 //			|_______|
 //		        l4	  
-Quadrilateral::Quadrilateral(Line l1, Line l2, Line l3, Line l4):
-							l1(l1), l2(l2), l3(l3),l4(l4)
+Quadrilateral::Quadrilateral(Line line1, Line line2, Line line3, Line line4):
+							l1(line1), l2(line2), l3(line3),l4(line4)
 {
 	
 	p1=l1.getBegin();
@@ -220,7 +220,7 @@ void Quadrilateral::draw()
 	
 	
 	
-	myImg.display("Quadrilateral Image");
+	myImg.display("Shape Image (hit enter to continue)");
 	
 }
 void Quadrilateral::displayDimensions() const

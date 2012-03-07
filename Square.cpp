@@ -3,7 +3,7 @@
 #include <iostream>
 
 using namespace std;
-Square::Square(double w):RectangleA(w,w)
+Square::Square(double w):width(w),RectangleA(w,w)
 {
 }
 
