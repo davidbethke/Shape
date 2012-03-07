@@ -13,31 +13,32 @@ Line::Line(double l, double a, Point start):begin(start),length(l),angle(a)
 	//TODO also see modf to split int with fraction
 	x2=ceil(x2*1000)/1000;
 	y2=ceil(y2*1000)/1000;
-	end=Point(x2,y2);
+	end=Point(x2,y2); // set end point of line
+	
 }
 Line::Line(Point b, Point e):begin(b),end(e)
 {
-	//precompute length
+	
 	length=begin.distance(end);
 }
-
-
 Line::~Line(void)
 {
 }
 Point Line::getBegin() const
 {
-	return Point(begin);  //TODO do I need copy constructor, no pointers
+	return Point(begin);  
 }
 Point Line::getEnd() const
 {
-	return Point(end);   // TODO same as above
+	return Point(end);   
 }
 double Line::getLength() const
 {
-	return(begin.distance(end));
+	//return(begin.distance(end));
+	return length;
 }
-
+// experiment, create parallel line, offset, scaled, orgin shift
+/*
 Line  Line::createParallelLine(double offset,double shift, double scale) const
 {
 	//  http://stackoverflow.com/questions/2825412/draw-a-parallel-line
@@ -75,3 +76,4 @@ Line  Line::createParallelLine(double offset,double shift, double scale) const
 	
 	return(Line(Point(newX1,newY1),Point(newX2,newY2)));
 }
+*/

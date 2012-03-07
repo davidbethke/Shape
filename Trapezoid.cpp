@@ -12,7 +12,7 @@ Trapezoid::Trapezoid(void)
 //									angles need to add up to 180degrees
 //				len2
 //			  _________
-//		len1 /  180+a2 \
+//		len1 /		   \
 //			/           \  len3
 //		   / a1	      a2 \
 //        /_______________\

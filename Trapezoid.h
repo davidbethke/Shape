@@ -5,7 +5,7 @@ class Trapezoid :
 {
 public:
 	//Trapezoid(void);
-	Trapezoid(double,double,double,double,double,double);
+	Trapezoid(double,double,double,double,double,double); // l1,l2,l3,l4, a1,a2
 	~Trapezoid(void);
 	virtual void displayDimensions() const;
 private:

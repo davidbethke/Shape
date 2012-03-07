@@ -106,7 +106,6 @@ void Quadrilateral::initDouble()
 	x4=p4.getX();
 	y4=p4.getY();
 }
-
 void Quadrilateral::initLines()
 {
 	l1=Line(p1,p2);
@@ -114,7 +113,6 @@ void Quadrilateral::initLines()
 	l3=Line(p3,p4);
 	l4=Line(p4,p1);
 }
-
 void Quadrilateral::initPoints()
 {
 	p1=Point(x1,y1);
@@ -164,7 +162,6 @@ double Quadrilateral::getY(int i) const
 
 	}
 }
-
 Point Quadrilateral::getPoint(int i) const
 {
 	switch (i)
