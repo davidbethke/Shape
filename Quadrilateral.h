@@ -10,7 +10,7 @@ public:
 	Quadrilateral(int,double,double,double,double,double=90,double=0,double=270,double=180); //int is dummy param to change signature
 	Quadrilateral(Point=Point(),Point=Point(0,1),Point=Point(1,1),Point=Point(1,0));
 	Quadrilateral(Line,Line,Line,Line);
-	~Quadrilateral(void);
+	virtual ~Quadrilateral(void);
 	void draw();
 	virtual void displayDimensions() const;
 	double getX(int) const;
