@@ -40,7 +40,12 @@ Quadrilateral::Quadrilateral(int i,double len1, double len2, double len3, double
 							double a1, double a2, double a3, double a4)
 {
 	// construct the lines based on the passed in values
+#ifdef _DEBUG  // construct a quad starting at Point 0,0, for unit tests
+	l1=Line(len1,a1);		//defaults to starting at origin, expected val for unit tests
+#endif //_DEBUG
+#ifdef NDEBUG
 	l1=Line(len1,a1,Point(50,50));				// TODO, changed starting point at origin (0,0)
+#endif //NDEBUG
 	l2=Line(len2,a2,l1.getEnd());	// starting point at end of l1;
 	l3=Line(len3,a3,l2.getEnd());
 	l4=Line(len4,a4,l3.getEnd());

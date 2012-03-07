@@ -9,6 +9,6 @@ public:
 	virtual void displayDimensions() const;
 private:
 	double length1, length2, angle;
-	Line l1,l2,l3,l4;
+	
 };
 

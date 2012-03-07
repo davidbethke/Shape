@@ -8,7 +8,7 @@ QuadrilateralTest::QuadrilateralTest(void):p1(0,0),
 											p4(1,0),
 											quad1(p1,p2,p3,p4)
 {
-	dimString="Side1 length:1\nSide2 length:1\nSide3 length:1\nSide4 length:1\nVerteces\nx:0, y:0\nx:0, y:1\nx:1, y:1\nx:1, y:0\n";
+	dimString="Quadrilateral Dimensions\nSide1 length:1\nSide2 length:1\nSide3 length:1\nSide4 length:1\nVerteces\nx:0, y:0\nx:0, y:1\nx:1, y:1\nx:1, y:0\n";
 }
 
 
@@ -120,7 +120,7 @@ TEST_F(QuadrilateralTest,display)
 {
 	std::cout.rdbuf(oss.rdbuf());
 	quad1.displayDimensions();
-	EXPECT_TRUE(dimString==oss.str())<<"display string FAIL";
+	EXPECT_EQ(dimString,oss.str())<<"display string FAIL";
 }
 TEST_F(QuadrilateralTest,constructorLen)
 {
@@ -149,7 +149,7 @@ TEST_F(QuadrilateralTest,constructorLen)
 	EXPECT_TRUE(p4==quad.getLine(4).getBegin())<<"point4 FAil";
 	*/
 	//check points data
-	ASSERT_NEAR(p2.getX(),quad.getLine(2).getBegin().getX(),.1)<<"p2 x FAIL";
+	ASSERT_NEAR(p2.getX(),quad.getLine(2).getBegin().getX(),.2)<<"p2 x FAIL";
 	ASSERT_NEAR(p2.getY(),quad.getLine(2).getBegin().getY(),.1)<<"p2 y FAIL";
 	ASSERT_NEAR(p3.getX(),quad.getLine(3).getBegin().getX(),.1)<<"p3 x FAIL";
 	ASSERT_NEAR(p3.getY(),quad.getLine(3).getBegin().getY(),.1)<<"p3 y FAIL";

@@ -3,11 +3,7 @@
 #include <cmath>
 
 using namespace std;
-/*
-Line::Line(double l):begin(0,0),end(l,0),length(l),angle(0) // simplest line
-{
-}
-*/
+
 Line::Line(double l, double a, Point start):begin(start),length(l),angle(a)
 {
 	// right triangle
@@ -41,18 +37,10 @@ double Line::getLength() const
 {
 	return(begin.distance(end));
 }
-/*
-void Line::draw() const
-{
-	const int blue[]={0,0,255};
-	CImg<int> myImg(500,400,1,3,0);
-	myImg.fill(0);
-	myImg.draw_line(begin.getX(),begin.getY(),end.getX(),end.getY());
-}
-*/
+
 Line  Line::createParallelLine(double offset,double shift, double scale) const
 {
-	// for readability http://stackoverflow.com/questions/2825412/draw-a-parallel-line
+	//  http://stackoverflow.com/questions/2825412/draw-a-parallel-line
 	//move in orthog direction
 	double yOrth=(end.getY()-begin.getY())/(length);
 	double xOrth=(begin.getX()-end.getX())/(length);
